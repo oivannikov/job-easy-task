@@ -1,0 +1,22 @@
+.comment {
+  display: flex;
+  height: 120px;
+  margin-top: 20px;
+
+  &__info,
+  &__text {
+    padding: 14px 0 0 14px;
+    border-radius: 8px;
+  }
+
+  &__info {
+    margin-right: 20px;
+    background-color: green;
+    width: 20%;
+  }
+
+  &__text {
+    background-color: pink;
+    width: 80%;
+  }
+}

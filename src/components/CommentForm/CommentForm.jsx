@@ -5,7 +5,7 @@ import { createComment } from '../../api/comments';
 
 import './CommentForm.scss';
 
-export function CommentForm({ upDateComments }) {
+export function CommentForm({ upDateComments, onAddComment}) {
   const [name, setName] = useState('');
   const [title, setTitle] = useState('');
 
@@ -24,38 +24,41 @@ export function CommentForm({ upDateComments }) {
 
     setName('');
     setTitle('');
+    onAddComment(false);
   }
 
   return (
     <form className="col s12" onSubmit={(e) => handleSumbit(e)}>
       <div className="row">
-        <div className="input-field col s6">
+        <div className="input-field col s12">
           <input
-            id="first_name"
             type="text"
             className="validate"
             value={name}
+            placeholder="Your Name"
             onChange={({ target }) => setName(target.value)}
             required
           />
-          <label for="first_name">Your name</label>
         </div>
       </div>
 
-      <div class="row">
-        <div class="input-field col s12">
+      <div className="row">
+        <div className="input-field col s12">
           <textarea
-            id="textarea1"
-            className="materialize-textarea"
+            className="materialize-textarea validate"
             value={title}
+            placeholder="Your Comment"
             onChange={({ target }) => setTitle(target.value)}
             required>
           </textarea>
-          <label for="textarea1">Your comment</label>
         </div>
       </div>
-
-      <button className="waves-effect waves-light btn" type="sumbit">Add comment</button>
+    
+      <div className="row">
+        <div className="input-field col s12">
+          <button className="btn waves-effect waves-light col s12 marginTop" type="submit">Add comment</button>
+        </div>
+      </div>
     </form>
   );
 }
