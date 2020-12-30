@@ -6,7 +6,7 @@ const { v4 } = require('uuid');
 const cors = require('cors');
 app.use(cors());
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 
 const COMMENTS = [
   {id: v4(), name: "Alex", text: "Hello everyone"},
