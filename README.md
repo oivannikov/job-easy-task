@@ -1,5 +1,5 @@
-Run project
+Run project  
   npm run start
 
-Run server
+Run server  
   npm run dev
