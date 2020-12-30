@@ -6,6 +6,8 @@ const { v4 } = require('uuid');
 const cors = require('cors');
 app.use(cors());
 
+const PORT = process.env.PORT || 3001;
+
 const COMMENTS = [
   {id: v4(), name: "Alex", text: "Hello everyone"},
 ];
@@ -29,4 +31,5 @@ app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
 });
 
-app.listen(3001);
+app.listen(PORT);
+ 
