@@ -1,0 +1,35 @@
+.comment {
+  display: flex;
+  min-height: 120px;
+  margin-top: 20px;
+
+  &__info,
+  &__text {
+    padding: 14px 14px 4px 14px;
+    border-radius: 8px;
+    opacity: 0.9;
+    font-size: 18px;
+    color: #3E4056;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 20px;
+    background-color: #bbdefb;
+    width: 20%;
+    max-height: 120px;
+
+  }
+
+  &__text {
+    background-color: #e8eaf6;
+    width: 80%;
+  }
+
+  &__date {
+    align-self: flex-end;
+    font-size: 14px;
+  }
+}

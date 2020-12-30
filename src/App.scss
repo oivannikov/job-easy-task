@@ -1,0 +1,21 @@
+body {
+  background-color: rgb(35, 53, 44);
+  box-sizing: border-box;
+}
+
+textarea,
+button {
+  outline: none;
+  border: none;
+  background: none;
+}
+
+.app {
+  padding: 40px 80px;
+  
+  &__create-comment {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 40px;
+  }
+}
