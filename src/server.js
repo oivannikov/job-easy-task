@@ -25,10 +25,10 @@ app.post('/api/comments', (req, res) => {
   res.status(201).json(comment);
 });
 
-app.use(express.static(path.resolve(__dirname, 'public')));
+app.use(express.static(path.resolve(__dirname, 'build')));
 
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
+  res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
 });
 
 app.listen(PORT);
