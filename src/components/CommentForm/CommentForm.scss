@@ -1,9 +1,25 @@
 .validate,
 .validate::placeholder {
   color: #26a69a;
-  opacity: 0.7;
+  opacity: 0.5;
 }
 
-.marginTop {
-  margin-top: 64px;
+.form {
+  &__textarea {
+    width: 100%;
+    padding: 10px;
+    height: 32px;
+    transition: 1.5s;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    color: #26a69a;
+    height: 200px;
+    resize: none;
+
+    &::placeholder {
+      letter-spacing: 0;
+      color: #26a69a;
+      opacity: 0.5;
+    }
+  }
 }

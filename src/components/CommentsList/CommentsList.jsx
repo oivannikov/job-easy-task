@@ -4,8 +4,6 @@ import { useSelector } from 'react-redux';
 
 import { Comment } from '../Comment/Comment';
 
-import './CommentsList.scss';
-
 export function CommentsList() {
   const comments = useSelector(state => state.comments);
 

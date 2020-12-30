@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+
+import PropTypes from 'prop-types';
 
 import { createComment } from '../../api/comments';
 
 import './CommentForm.scss';
 
-export function CommentForm({ upDateComments, onAddComment}) {
+export function CommentForm({ upDateComments, onCreateComment }) {
   const [name, setName] = useState('');
   const [title, setTitle] = useState('');
 
@@ -14,7 +15,7 @@ export function CommentForm({ upDateComments, onAddComment}) {
   
     const newComment = {
       name,
-      comment: title,
+      text: title,
     }
  
     if (name && title) {
@@ -24,11 +25,11 @@ export function CommentForm({ upDateComments, onAddComment}) {
 
     setName('');
     setTitle('');
-    onAddComment(false);
+    onCreateComment(false);
   }
 
   return (
-    <form className="col s12" onSubmit={(e) => handleSumbit(e)}>
+    <form className="form col s12" onSubmit={(e) => handleSumbit(e)}>
       <div className="row">
         <div className="input-field col s12">
           <input
@@ -42,23 +43,24 @@ export function CommentForm({ upDateComments, onAddComment}) {
         </div>
       </div>
 
+      <textarea
+        className="form__textarea"
+        value={title}
+        placeholder="Your Comment"
+        onChange={({ target }) => setTitle(target.value)}
+        required>
+      </textarea>
+
       <div className="row">
         <div className="input-field col s12">
-          <textarea
-            className="materialize-textarea validate"
-            value={title}
-            placeholder="Your Comment"
-            onChange={({ target }) => setTitle(target.value)}
-            required>
-          </textarea>
-        </div>
-      </div>
-    
-      <div className="row">
-        <div className="input-field col s12">
-          <button className="btn waves-effect waves-light col s12 marginTop" type="submit">Add comment</button>
+          <button className="btn waves-effect waves-light col s12" type="submit">Add comment</button>
         </div>
       </div>
     </form>
   );
+}
+
+CommentForm.propTypes = {
+  upDateComments: PropTypes.func.isRequired,
+  onCreateComment: PropTypes.func.isRequired,
 }

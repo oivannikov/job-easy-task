@@ -1,5 +1,7 @@
 import React from 'react';
 
+import PropTypes from 'prop-types';
+
 import './Modal.scss';
 
 export function Modal({ children, onAddComment }) {
@@ -10,4 +12,8 @@ export function Modal({ children, onAddComment }) {
       </div>
     </div>
   );
+}
+
+Modal.propTypes = {
+  onAddComment: PropTypes.func.isRequired,
 }
